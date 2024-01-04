@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import BlueButton from './components/button';
+import authorName from './components/Name';
 
 function App() {
+  const now = new Date()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BlueButton />
+      <authorName>
+        title={'Propsをやってみる'}
+        content={'はじめのprops'}
+        updateAt={now}
+      </authorName>
     </div>
   );
 }

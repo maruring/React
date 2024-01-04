@@ -6,7 +6,7 @@ const BlueButton = () => {
         <button className='btn-blue'>
             Click me!
         </button>
-    )
-}
+    );
+};
 
 export default BlueButton;
