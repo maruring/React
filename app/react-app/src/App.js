@@ -1,19 +1,15 @@
 import './App.css';
-import BlueButton from './components/button';
-import authorName from './components/Name';
+import { blueButton, Title } from "./components/index";
 
 function App() {
-  const now = new Date()
   return (
     <div className="App">
-      <BlueButton />
-      <authorName>
-        title={'Propsをやってみる'}
-        content={'はじめのprops'}
-        updateAt={now}
-      </authorName>
+      <Title
+        title={'propsで値を渡す'}
+      />
+      <blueButton />
     </div>
   );
-}
+};
 
 export default App;
