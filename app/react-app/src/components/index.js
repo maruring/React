@@ -1,4 +1,6 @@
 // エントリポイント
-export {default as blueButton} from './button'
-export {default as authorName} from './Name'
+// 関数コンポーネントを1つにまとめることで、import文の肥大化を防ぐ
+export {default as BlueButton} from './Button'
 export {default as Title} from './Title'
+export {default as Content} from './Content'
+export {default as Article} from './Article'

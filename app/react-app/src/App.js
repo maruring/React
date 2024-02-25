@@ -1,13 +1,14 @@
 import './App.css';
-import { blueButton, Title } from "./components/index";
+import { BlueButton, Article } from './components/index.js'; 
 
 function App() {
   return (
     <div className="App">
-      <Title
-        title={'propsで値を渡す'}
+      <BlueButton />
+      <Article
+        title={'タイトル'}
+        content={'内容'}
       />
-      <blueButton />
     </div>
   );
 };

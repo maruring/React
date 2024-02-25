@@ -12,7 +12,7 @@ docker-compose build
 3. 以下のコマンドでコンテナを作成
 
 ```
-docker-compose run --rm app sh -c 'npx create-react-app react-ap
+docker-compose run --rm app sh -c 'npx create-react-app react-ap'
 ```
 
 4. 以下のコマンドでコンテナを起動
@@ -40,8 +40,18 @@ pythonのrequement.txt的なもの
 ・直接編集してはいけない
 ・基本的に無視していいファイル
 
-
 ## JavaScriptのモジュール機能
 
 - 原則は1ファイル = 1モジュール
 - 必要な時に必要なモジュールのみを読み込む
+
+## React
+
+- import文の肥大化を防ぐためにindex.jsというエントリポイントが存在する
+- JSXという記述をすることでhtmlライクに書くことできる
+
+### 命名規則
+
+ファイル名はパスカルケース(Ex HogeHuga.jsx)
+
+コンポーネントはキャメルケース(Ex hogeHuga)
