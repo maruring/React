@@ -52,6 +52,6 @@ pythonのrequement.txt的なもの
 
 ### 命名規則
 
-ファイル名はパスカルケース(Ex HogeHuga.jsx)
+ファイル名とコンポーネントはパスカルケース(Ex HogeHuga.js)
 
-コンポーネントはキャメルケース(Ex hogeHuga)
+関数や変数名はローワーキャメルケース(Ex getHuga)

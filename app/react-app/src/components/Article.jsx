@@ -1,11 +1,16 @@
 import React from "react";
-import {title, content} from './index';
+import { useState } from "react";
+import {Title, Content} from './index';
+
 
 const Article = (props) => {
+    const [isPublish, setIsPublished] = useState(false);
+    console.log(isPublish);
     return (
         <div>
-            <title title={props.title} />
-            <content content={props.content} />
+            <Title title={props.title} />
+            <Content content={props.content} />
+            <button onClick={() => setIsPublished(true)}>公開</button>
         </div>
     );
 };

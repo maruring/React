@@ -1,13 +1,12 @@
 import './App.css';
-import { BlueButton, Article } from './components/index.js'; 
+import { Article } from './components/index.js'; 
 
 function App() {
   return (
     <div className="App">
-      <BlueButton />
       <Article
-        title={'タイトル'}
-        content={'内容'}
+        title={'useStateを使ってみる'}
+        content={'stateはコンポーネントの内容で宣言/制御される値'}
       />
     </div>
   );
