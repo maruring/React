@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const CountButton = () => {
     const [count, setCount] = useState(0);
+    // setCountがされてからcountに入るのにタイムラグがあるためprevStateを使った方がよい
     const upCount = () => {
         setCount(prevState => prevState+1);
     };
