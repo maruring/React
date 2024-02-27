@@ -4,7 +4,7 @@ import { Article, TextInput, CountButton, ToggleButton } from './components/inde
 function App() {
   return (
     <div className="App">
-      <TextInput />
+      {/* <TextInput /> */}
       <CountButton />
       <ToggleButton />
     </div>
