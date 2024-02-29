@@ -2,15 +2,21 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 const GetGithubInfo = () => {
-    const [id, setId] = useState('maruring');
+    const [id, setId] = useState('');
+    const [fixId, setFixId] = useState('');
     const [name, setName] = useState('');
-    const ids = ['maruring', 'aws', 'google'];
-    const getRandomId = () => {
-        const _id = ids[Math.floor(Math.random() * ids.length)]
-        setId(_id)
-    }
+
+    const textInputSetId = (e) =>{
+        setId(e.target.value);
+    };
+
+    const onClickSetFixId = () => {
+        setFixId(id);
+    };
+
+
     useEffect(() => {
-        fetch(`https://api.github.com/users/${id}`)
+        fetch(`https://api.github.com/users/${fixId}`)
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -19,12 +25,13 @@ const GetGithubInfo = () => {
         .catch(error => {
             console.log(error)
         })
-    }, [id]);
+    }, [fixId]);
 
     return(
         <div>
-            <button onClick={getRandomId}>IDを変更</button>
-            <p>id: {id}</p>
+            <input onChange={(e) => {textInputSetId(e)}} type="text"></input>
+            <button onClick={onClickSetFixId}>確定</button>
+            <p>id: {fixId}</p>
             <p>ユーザー名: {name}</p>
         </div>
     );
