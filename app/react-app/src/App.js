@@ -1,12 +1,10 @@
 import './App.css';
-import { Article, TextInput, CountButton, ToggleButton } from './components/index.js'; 
+import { GetGithubInfo } from './components/index.js'; 
 
 function App() {
   return (
     <div className="App">
-      {/* <TextInput /> */}
-      <CountButton />
-      <ToggleButton />
+      <GetGithubInfo />
     </div>
   );
 };
