@@ -1,23 +1,18 @@
 # Reactを動かす
-
 ## 環境作成
 1. 任意のterminalを起動してchatbotディレクトリに移動
 2. 以下のコマンドでイメージを作成
-
 ```
 docker-compose build
 ```
 
 3. 以下のコマンドでコンテナを作成
-
-chatbotサービスを動かしてreactのプロジェクトを作成する
-
+chatbotサービスを動かしてreactのプロジェクトを作成する  
 ```
 docker-compose run --rm chatbot sh -c 'npx create-react-app chatbot-app'
 ```
 
 4. 以下のコマンドでコンテナを起動
-
 ```
 docker-compose up -d
 ```
@@ -25,13 +20,11 @@ docker-compose up -d
 5. 問題なさそうであれば、ブラウザ上で http://localhost:3000 にアクセスする
    *アクセスできるまでに5分ほどかかる場合がある
 6. docker desktopからコンテナにアクセスして以下のコマンドでパッケージをインストールする
-
 ```
 npm install --save @mui/material @emotion/react @emotion/styled
 ```
 
 7. HotReloadを有効にするためpackage.jsonのscriptsを以下の内容にする
-
 ```
 "scripts": {
    "start": "WATCHPACK_POLLING=true react-scripts start",
@@ -70,7 +63,7 @@ firebase init
 firebase deploy --only hosting,storage,firestore
 ```
 # 各種勉強
-### package-lock.json
+## package-lock.json
 Node.jsにおいてインストールするパッケージが記述されたファイル  
 環境が変わってもコマンド一発で元々あったパッケージをインストールすることが可能  
 pythonのrequement.txt的なもの  
@@ -89,5 +82,7 @@ pythonのrequement.txt的なもの
 - propsはコンポーネントに引数を渡すことができる
 - stateはコンポーネント内部で宣言・制御される値
 ### 命名規則
-ファイル名とコンポーネントはパスカルケース(Ex HogeHuga.js)  
-関数や変数名はローワーキャメルケース(Ex getHuga)
+- ファイル名とコンポーネントはパスカルケース(Ex HogeHuga.js)  
+- 関数や変数名はローワーキャメルケース(Ex getHuga)
+### データモデル設計の始め方
+- データモデルはViewから設計する -> 手書きやfigmaでやってみる
