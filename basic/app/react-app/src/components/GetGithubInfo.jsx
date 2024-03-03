@@ -12,8 +12,8 @@ const GetGithubInfo = () => {
 
     const onClickSetFixId = () => {
         setFixId(id);
+        setId('');
     };
-
 
     useEffect(() => {
         fetch(`https://api.github.com/users/${fixId}`)
@@ -29,7 +29,7 @@ const GetGithubInfo = () => {
 
     return(
         <div>
-            <input onChange={(e) => {textInputSetId(e)}} type="text"></input>
+            <input onChange={(e) => {textInputSetId(e)}} type="text" value={id} />
             <button onClick={onClickSetFixId}>確定</button>
             <p>id: {fixId}</p>
             <p>ユーザー名: {name}</p>

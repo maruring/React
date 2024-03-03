@@ -23,6 +23,29 @@ docker-compose up -d
 
 5. 問題なさそうであれば、ブラウザ上で http://localhost:3000 にアクセスする
    *アクセスできるまでに5分ほどかかる場合がある
+6. docker desktopからコンテナにアクセスして以下のコマンドでパッケージをインストールする
+
+```
+npm install --save material-ui/core material-ui/icons material-ui/systeam
+```
+7. HotReloadを有効にするためpackage.jsonのscriptsを以下の内容にする
+```
+"scripts": {
+   "start": "WATCHPACK_POLLING=true react-scripts start",
+   "build": "react-scripts build",
+   "test": "react-scripts test",
+   "eject": "react-scripts eject"
+}
+```
+8. 以下のコマンドでfirebaseをインストールする
+```
+npm install -g firebase-tools
+npm install --save firebase
+```
+9. firebaseの環境を作成したら以下のコマンドでコンテナからfirebaseにログインする
+```
+firebase login --no-localhost
+```
 
 ## 各種勉強
 
