@@ -1,45 +1,28 @@
 import './assets/styles/style.css';
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import defaultDataset from './DataSchema/dataset';
 import { AnswersList, Chats } from './components/index';
 
 function App() {
-  const InitInfo = {
-    answers: [],
-    chats: [],
-    currentId: "init",
-    dataset: defaultDataset,
-    open: false
-  };
-  const [info, setInfo] = useState(InitInfo);
+  const [answers, setAnswers] = useState([]);
+  const [chats, setChats] = useState([]);
+  const [currentId, setCurrentId] = useState('init');
+  const [dataset, setDataset] = useState(defaultDataset);
+  const [open,  setOpen] = useState(false);
 
-  // 初期化のプロセス
-  const initProcess = () => {
-    const initDataset = InitInfo.dataset[InitInfo.currentId];
-    const initAnswer = initDataset.answers;
-    const initChat = {
-      text: initDataset.question,
-      type: "question"
-    };
-    // infoオブジェクトをコピー、変更 -> もとのinfoオブジェクトに再代入
-    let _info = JSON.parse(JSON.stringify(info));
-    _info.answers = initAnswer;
-    _info.chats.push(initChat)
-    setInfo(_info);
-  };
-
+  const addChats = useCallback((chat) => {
+    setChats(prevChats => {
+      return [...prevChats, chat]
+    })
+  },[setChats]);
+  
   // 次の質問を出す
   const displayNextQuestion = (nextQuestionId) => {
-    let _info = JSON.parse(JSON.stringify(info));
-    const chats = _info.chats;
-    chats.push({
-      text: info.dataset[nextQuestionId].question,
-      type: "question"
-    });
+    addChats()
     _info.currentId = nextQuestionId;
-    _info.answers = _info.dataset[nextQuestionId].answers;
-
+    _info.answers = info.dataset[nextQuestionId].answers;
+    // infoの更新処理
     setInfo(_info);
   }
 
@@ -58,12 +41,11 @@ function App() {
         _info.chats.push(chat);
         // infoの更新処理
         setInfo(_info);
-
         displayNextQuestion(nextQuestionId);
     };
   };
   
-  useEffect(() => {selectAnswer("", info.currentId)}, [info.currentId]);
+  useEffect(() => {selectAnswer("", info.currentId)}, []);
   
   return (
     // c-sectionでブラウザの大きさに合わせる
