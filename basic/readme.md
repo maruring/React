@@ -58,6 +58,15 @@ useEffectはdomがレンダリングされる際に実行される処理を定�
 親からPropsで渡されていないのに、Contextに収容されているデータへよりシンプルにアクセスできる  
 Propsのバケツリレーを解消することができる
 useContextを呼び出すコンポーネントはコンテクストの値が変化するたびに毎回再レンダーされる  
+### useReducer
+状態管理のためのフック(useStateと似たような機能)  
+```
+const [state, dispatch] = useReducer(reducer, '初期値')
+// reducerはstateを更新するための関数
+// dispatchは、reducerを実行するための呼び出し関数
+```
+useReducerはオブジェクトや配列のみstateで取り扱うことができる  
+
 ### 命名規則
 - ファイル名とコンポーネントはパスカルケース(Ex HogeHuga.js)  
 - 関数や変数名はローワーキャメルケース(Ex getHuga)
