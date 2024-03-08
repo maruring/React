@@ -1,9 +1,9 @@
-import React, {useState, createContext} from 'react';
-import { Counter } from './components/index';
+import React from 'react';
+import SlotMachine from './components/CallbackSample/SlotMachine';
 
 function App() {
   return (
-    <Counter />
+    <SlotMachine />
   );
 };
 

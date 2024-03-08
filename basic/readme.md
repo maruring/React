@@ -66,6 +66,15 @@ const [state, dispatch] = useReducer(reducer, '初期値')
 // dispatchは、reducerを実行するための呼び出し関数
 ```
 useReducerはオブジェクトや配列のみstateで取り扱うことができる  
+### useCallback
+メモ化したコールバック関数を返す  
+React.memoと併用することになる  
+メモ化 -> 初回のみ処理を実行記録しておき、値が必要となった2回目以降は、前回の処理結果を計算することなく呼び出し値を得られるようにすること。propsに変化がない場合に再レンダリングをスキップできるため、パフォーマンスが向上する  
+```
+useCallback(callbackFunction, [deps]);
+depsはuseEffectと同じで特定の要素が変化したのみだけ実行できるようにすることができる
+```
+
 
 ### 命名規則
 - ファイル名とコンポーネントはパスカルケース(Ex HogeHuga.js)  
