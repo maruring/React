@@ -76,14 +76,12 @@ pythonのrequement.txt的なもの
 ## JavaScriptのモジュール機能
 - 原則は1ファイル = 1モジュール
 - 必要な時に必要なモジュールのみを読み込む
-## React
-- import文の肥大化を防ぐためにindex.jsというエントリポイントが存在する
-- JSXという記述をすることでhtmlライクに書くことできる
-- propsはコンポーネントに引数を渡すことができる
-- stateはコンポーネント内部で宣言・制御される値
-- useEffectはdomがレンダリングされる際に実行される処理を定義することができる
-### 命名規則
-- ファイル名とコンポーネントはパスカルケース(Ex HogeHuga.js)  
-- 関数や変数名はローワーキャメルケース(Ex getHuga)
-### データモデル設計の始め方
-- データモデルはViewから設計する -> 手書きやfigmaでやってみる
+## Material-UI
+CSSで変更してもいいが、Material-UIを使用した方がbetterな場合もある  
+```
+import {createStyle, makeStyles} from '@material-ui/core/styles'
+```
+- json形式で記述
+- キャメルケース(Ex: borderColor)
+- 数値はそのまま
+- 文字列はクォーテーションで囲む

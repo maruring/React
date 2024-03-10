@@ -18,13 +18,15 @@ function App() {
   },[setChats]);
   
   // 次の質問を出す
-  const displayNextQuestion = (nextQuestionId) => {
-    addChats()
-    _info.currentId = nextQuestionId;
-    _info.answers = info.dataset[nextQuestionId].answers;
-    // infoの更新処理
-    setInfo(_info);
-  }
+  const displayNextQuestion = (nextQuestionId, nextDataset) => {
+    const chat = {
+      text: nextDataset.question,
+      type: "question"
+    };
+    addChats(chat);
+    setCurrentId(nextQuestionId);
+    setAnswers(nextDataset.answers);
+  };
 
   // answerボタンを押下した際の挙動
   const selectAnswer = (selectedAnswer, nextQuestionId) => {
@@ -33,26 +35,28 @@ function App() {
         displayNextQuestion(nextQuestionId);
         break;
       default:
-        let _info = JSON.parse(JSON.stringify(info));
         const chat = {
           text: selectedAnswer,
           type: "answer"
         };
-        _info.chats.push(chat);
-        // infoの更新処理
-        setInfo(_info);
-        displayNextQuestion(nextQuestionId);
+        addChats(chat);
+        const nextDataset = dataset[nextQuestionId];
+        displayNextQuestion(nextQuestionId, nextDataset);
     };
   };
   
-  useEffect(() => {selectAnswer("", info.currentId)}, []);
+  useEffect(() => {
+    // 最初の表示
+    const initDataset = dataset[currentId];
+    displayNextQuestion(currentId, initDataset);
+  }, []);
   
   return (
     // c-sectionでブラウザの大きさに合わせる
     <section className='c-section'>
       <div className='c-box'>
-        <Chats chats={info.chats}/>
-        <AnswersList answers={info.answers} select={selectAnswer} />
+        <Chats chats={chats}/>
+        <AnswersList answers={answers} select={selectAnswer} />
       </div>
     </section>
   );

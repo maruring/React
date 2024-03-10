@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import NoProfile from '../assets/images/no-profile.png';
 import Owner from '../assets/images/owner.png';
 
-const Chat = (props) => {
+const Chat = memo((props) => {
     const isQuestion = (props.type === 'question');
     const classes = isQuestion ? 'p-chat__row' : 'p-chat__reverse';
 
@@ -26,6 +26,6 @@ const Chat = (props) => {
             </div>
     </ListItem>
     );
-};
+});
 
 export default Chat;

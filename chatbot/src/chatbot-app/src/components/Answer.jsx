@@ -1,10 +1,27 @@
 import React from "react";
 import Button from '@mui/material/Button';
+import { makeStyles, createStyles } from "@mui/material";
+
+const useStyles = makeStyles(() => {
+    createStyles({
+        "button": {
+            borderColor: "#FFB549",
+            color: "#FFB549",
+            fontWeight: 600,
+            marginBottom: "8px",
+            "&:hover":{
+                backgroundColor: "#FFB549",
+                color: "#fff"
+            }
+        }
+    })
+});
 
 const Answer = (props) => {
+    const classes = useStyles();
     return(
         <div>
-            <Button variant="contained" onClick={() => props.select(props.content, props.nextId)}>
+            <Button className={classes.button} variant="Outlined" onClick={() => props.select(props.content, props.nextId)}>
                 {props.content}
             </Button>
         </div>
