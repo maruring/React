@@ -74,6 +74,10 @@ React.memoと併用することになる
 useCallback(callbackFunction, [deps]);
 depsはuseEffectと同じで特定の要素が変化したのみだけ実行できるようにすることができる
 ```
+### useMemo
+関数の結果をメモ化することで不必要な計算をスキップしてパフォーマンスを向上させることができるhook  
+useCallbackは"関数自体"をメモ化  
+useMemoは"関数の結果"をメモ化
 
 
 ### 命名規則

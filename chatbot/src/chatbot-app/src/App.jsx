@@ -44,6 +44,9 @@ function App() {
         displayNextQuestion(nextQuestionId, nextDataset);
     };
   };
+
+  // チャットが入った時に一番下にスクロールする
+  
   
   useEffect(() => {
     // 最初の表示
