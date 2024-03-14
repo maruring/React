@@ -29,6 +29,14 @@ const defaultDataset = {
             {content: "九州", nextId: "kyusyu"}
         ],
         "question": "どこに行きたいですか?"
+    },
+    "sleep_training": {
+        "answers": [
+            {content: "抱っこマンを寝かせる方法", nextId: "DakkoMan"},
+            {content: "ネントレの開始時期について", nextId: "start-time"},
+            {content: "おすすめのネントレ動画を教えて欲しい", nextId: "https://youtu.be/vq68W9YOq_U?si=c2UzMdnsjDglY_NF"}
+        ],
+    "question": "ネントレの何について知りたいですか?"
     }
 }
 

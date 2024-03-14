@@ -11,7 +11,7 @@ const ListStyled = styled(List)({
 
 const Chats = memo((props) => {
     return(
-        <ListStyled>
+        <ListStyled id={"scroll-area"}>
             {props.chats.map((chat, index) => {
                 return <Chat text={chat.text} type={chat.type} key={index.toString()} />
                 })}

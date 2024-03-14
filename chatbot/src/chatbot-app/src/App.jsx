@@ -19,6 +19,7 @@ function App() {
   
   // 次の質問を出す
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
+    console.log("questionのレンダリング");
     const chat = {
       text: nextDataset.question,
       type: "question"
@@ -30,10 +31,18 @@ function App() {
 
   // answerボタンを押下した際の挙動
   const selectAnswer = (selectedAnswer, nextQuestionId) => {
+    console.log("answerのレンダリング");
     switch(true){
       case(nextQuestionId === 'init'):
         displayNextQuestion(nextQuestionId);
         break;
+      case(/https:*/.test(nextQuestionId)):
+        // aタグを作成する
+        const a = document.createElement('a');
+        a.href = nextQuestionId;
+        // targetを_blankにすると別タブで外部表示をできるようにする
+        a.target = '_blank';
+        a.click();
       default:
         const chat = {
           text: selectedAnswer,
@@ -41,12 +50,18 @@ function App() {
         };
         addChats(chat);
         const nextDataset = dataset[nextQuestionId];
-        displayNextQuestion(nextQuestionId, nextDataset);
+        // delayを作ることでchatしている感をだす
+        setTimeout(() => displayNextQuestion(nextQuestionId, nextDataset), 750);
     };
   };
 
   // チャットが入った時に一番下にスクロールする
-  
+  useEffect(() => {
+    const scrollArea = document.getElementById('scroll-area');
+    if(scrollArea){
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
+  });
   
   useEffect(() => {
     // 最初の表示
