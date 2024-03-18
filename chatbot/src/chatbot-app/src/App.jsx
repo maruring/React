@@ -2,21 +2,29 @@ import './assets/styles/style.css';
 import React from "react";
 import { useState, useEffect, useCallback } from "react";
 import defaultDataset from './DataSchema/dataset';
-import { AnswersList, Chats } from './components/index';
+import { AnswersList, Chats, FormDialog } from './components/index';
 
 function App() {
   const [answers, setAnswers] = useState([]);
   const [chats, setChats] = useState([]);
   const [currentId, setCurrentId] = useState('init');
   const [dataset, setDataset] = useState(defaultDataset);
-  const [open,  setOpen] = useState(false);
+  const [open,  setOpen] = useState(false); // モーダルのOpen/Close
 
   const addChats = useCallback((chat) => {
     setChats(prevChats => {
       return [...prevChats, chat]
     })
   },[setChats]);
-  
+
+  const handleClickOpen = useCallback(() => {
+    setOpen(true);
+  });
+
+  const handleClose = useCallback(() => {
+    setOpen(false);
+  });
+
   // 次の質問を出す
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     console.log("questionのレンダリング");
@@ -43,6 +51,11 @@ function App() {
         // targetを_blankにすると別タブで外部表示をできるようにする
         a.target = '_blank';
         a.click();
+        break;
+      // nextQuestionIdがcontactの場合にダイアログを表示する
+      case(nextQuestionId === 'contact'):
+        handleClickOpen();
+        break;
       default:
         const chat = {
           text: selectedAnswer,
@@ -75,6 +88,7 @@ function App() {
       <div className='c-box'>
         <Chats chats={chats}/>
         <AnswersList answers={answers} select={selectAnswer} />
+        <FormDialog open={open} handleClose={handleClose} />
       </div>
     </section>
   );
