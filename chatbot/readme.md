@@ -43,7 +43,7 @@ npm install --save @mui/material @emotion/react @emotion/styled
 9. 以下のコマンドでfirebaseをインストールする
 ```
 npm install -g firebase-tools
-npm install --save firebase
+npm install -g firebase
 ```
 
 10. firebaseの環境を作成したら以下のコマンドでコンテナからfirebaseにログインする

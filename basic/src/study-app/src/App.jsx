@@ -1,9 +1,9 @@
 import React from 'react';
-import SlotMachine from './components/CallbackSample/SlotMachine';
+import { TextArea } from './components/index';
 
 function App() {
   return (
-    <SlotMachine />
+    <TextArea />
   );
 };
 

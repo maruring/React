@@ -3,3 +3,4 @@
 export {default as ContextRoot} from './ContextSample/ContextRoot'
 export {default as Counter} from './ReducerSample/Counter'
 export {default as CallbackCounter} from './CallbackSample/CallbackCounter'
+export {default as TextArea} from './RefSample/TextArea'
