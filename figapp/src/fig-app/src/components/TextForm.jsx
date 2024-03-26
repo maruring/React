@@ -10,6 +10,7 @@ const TextForm = (props) => {
             {isPassword ? (
                 <TextField
                 required
+                fullWidth
                 id={props.id}
                 type="password"
                 onChange={props.onChange}
@@ -18,6 +19,7 @@ const TextForm = (props) => {
             ) : (
                 <TextField
                 required
+                fullWidth
                 id={props.id}
                 onChange={props.onChange}
                 variant="outlined"
