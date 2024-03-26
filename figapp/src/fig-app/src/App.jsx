@@ -1,5 +1,5 @@
 import React from "react";
-import { SignIn, SignUp, Main } from "./components/index.js";
+import { SignIn, SignUp, DashBoard} from "./components/index.js";
 
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<DashBoard />} />
       </Routes>
     </BrowserRouter>
   );

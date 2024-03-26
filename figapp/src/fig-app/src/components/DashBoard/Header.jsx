@@ -12,7 +12,7 @@ const Header = () => {
             <Toolbar>
             <IconButton
                     size="large"
-                    edge="end"
+                    edge="start"
                     color="inherit"
                     aria-label="menu"
                     sx={{ mr: 2 }}
@@ -21,7 +21,7 @@ const Header = () => {
                 </IconButton>
                 <IconButton
                     size="large"
-                    edge="end"
+                    edge="start"
                     color="inherit"
                     aria-label="menu"
                     sx={{ mr: 2 }}
