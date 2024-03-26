@@ -26,19 +26,19 @@ const SignUp = () => {
 
 	const handleClick = () => {
 		const isEqual = (password === validatePassword);
-
+		console.log(isEqual.toString());
 	}
 
 
     return(
 		<Container maxWidth="sm">
 			<Stack spacing={2} >
-				<TextForm formType='email' title='Email' id='email' value={email} onChange={inputEmail} />
-				<TextForm formType='password' title='Password' id='password' value={password} onChange={inputPassword} />
-                <TextForm formType='password' title='Passwordをもう一度入力してください' id='ValidatePassword' value={validatePassword} onChange={inputValidatePassword} />
+				<TextForm formType='email' label='Email' id='email' value={email} onChange={inputEmail} />
+				<TextForm formType='password' label='Password' id='password' value={password} onChange={inputPassword} />
+                <TextForm formType='password' label='Passwordをもう一度入力してください' id='ValidatePassword' value={validatePassword} onChange={inputValidatePassword} />
 			</Stack>
 			<Stack spacing={2} >
-				<Button variant="contained">アカウント作成</Button>
+				<Button variant="contained" onClick={handleClick}>アカウント作成</Button>
 				<p>or</p>
 				<Button variant="contained">Googleアカウントで作成</Button>
 			</Stack>

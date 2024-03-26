@@ -21,8 +21,8 @@ const SignIn = () => {
 	return(
 		<Container maxWidth="sm">
 			<Stack spacing={2} >
-				<TextForm formType='email' title='Email' id='email' value={email} onChange={inputEmail} />
-				<TextForm formType='password' title='password' id='password' value={password} onChange={inputPassword} />
+				<TextForm formType='email' label='Email' id='email' value={email} onChange={inputEmail} />
+				<TextForm formType='password' label='password' id='password' value={password} onChange={inputPassword} />
 			</Stack>
 			<Stack spacing={2} >
 				<Button variant="contained">ログイン</Button>

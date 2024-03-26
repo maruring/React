@@ -6,11 +6,11 @@ const TextForm = (props) => {
 
     return(
         <div>
-            {props.title}<br />
             {isPassword ? (
                 <TextField
                 required
                 fullWidth
+                label={props.label}
                 id={props.id}
                 type="password"
                 onChange={props.onChange}
@@ -20,6 +20,7 @@ const TextForm = (props) => {
                 <TextField
                 required
                 fullWidth
+                label={props.label}
                 id={props.id}
                 onChange={props.onChange}
                 variant="outlined"
