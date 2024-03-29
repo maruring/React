@@ -1,19 +1,37 @@
 import React from "react";
 
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import styled from '@emotion/styled';
+import { createTheme, ThemeProvider } from "@mui/material";
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+const CardContentStyled = styled(CardContent)({
+    width: 200,
+    height: 50,
+    background: "green",
+});
 
 const MeasureCard = (props) => {
     return(
-        <Item>{}</Item>
+        <Card elevation={3} >
+            <CardContent>
+                <p>
+                {props.deviceName}
+                </p>
+                <p>
+                    {props.sensorName}
+                </p>
+                <p>
+                    {props.sensorType}
+                </p>
+                <Typography variant="h5" component="div">
+                    {props.sensorState}
+                </Typography>
+                {props.sensorValue}
+            </CardContent>
+        </Card>
     );
 };
 
