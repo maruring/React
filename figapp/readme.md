@@ -29,3 +29,10 @@ docker-compose up -d
    "eject": "react-scripts eject"
 }
 ```
+
+7. 以下のコンテナに入りコマンドで必要なパッケージをインストールする
+```
+cd fig-app
+npm install npm install @mui/material @emotion/react @emotion/styled
+npm install aws-amplify @aws-amplify/ui-react
+```

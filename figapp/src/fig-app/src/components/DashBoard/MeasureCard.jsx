@@ -17,19 +17,21 @@ const MeasureCard = (props) => {
     return(
         <Card elevation={3} >
             <CardContent>
-                <p>
-                {props.deviceName}
-                </p>
-                <p>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                    {props.deviceName}
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {props.sensorName}
-                </p>
-                <p>
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {props.sensorType}
-                </p>
-                <Typography variant="h5" component="div">
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {props.sensorState}
                 </Typography>
-                {props.sensorValue}
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                    {props.sensorValue}
+                </Typography>
             </CardContent>
         </Card>
     );
