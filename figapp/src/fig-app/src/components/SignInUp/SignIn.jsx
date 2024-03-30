@@ -6,9 +6,17 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 
+import Amplify, {I18n} from 'aws-amplify';
+import Auth from './auth/auth'
+import COGNITO_ERROR from './constants/i18n';
+
+Amplify.configure(Auth);
+
 const SignIn = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [user, setUser] = useState({});
+	const [showConfirmation, setShowConfirmation] = useState(false);
 
 	const inputEmail = (e) => {
 			setEmail(e.target.value);
@@ -16,6 +24,18 @@ const SignIn = () => {
 
 	const inputPassword = (e) => {
 			setPassword(e.target.value);
+	};
+
+	const signInHandleClick = () => {
+		Auth.signIn(email, password)
+		.then(user => {
+			if (!user.signInUserSession){
+				setUser({user});
+				setShowConfirmation(true);
+			} else {
+				
+			}
+		})
 	};
 
 	return(

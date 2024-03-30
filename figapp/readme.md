@@ -34,5 +34,10 @@ docker-compose up -d
 ```
 cd fig-app
 npm install npm install @mui/material @emotion/react @emotion/styled
-npm install aws-amplify @aws-amplify/ui-react
+npm install aws-amplify
 ```
+
+# 参考サイト
+- [ReactにCognitoでサインイン機能をつける](https://dev.classmethod.jp/articles/react-cognito-signin/)
+- [AWS cognitoとReactでログインを実装する](https://zenn.dev/dove/articles/63494de652511c)
+- [AmplifyでCognitoの認証画面をカスタマイズする](https://blog.denet.co.jp/amplify-cognito-custom-react/)
